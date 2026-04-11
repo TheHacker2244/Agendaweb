@@ -1,0 +1,50 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Mi Agenda";
+}
+
+<div class="text-center mt-4">
+    <h1 style="color: #68217a; font-weight: bold;">📇 Mi Agenda Web</h1>
+    <p class="text-muted">Proyecto desde cero en Visual Studio</p>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 p-4" style="background-color: #f8f9fa;">
+                <h5 class="mb-3">Agregar Contacto</h5>
+                <form method="post">
+                    <input type="text" name="nombre" class="form-control mb-2" placeholder="Nombre completo" required />
+                    <input type="text" name="telefono" class="form-control mb-2" placeholder="Teléfono" required />
+                    <input type="email" name="correo" class="form-control mb-3" placeholder="Correo electrónico" required />
+                    <button type="submit" class="btn w-100" style="background: #68217a; color: white;">Guardar en Agenda</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="table-responsive">
+                <table class="table table-hover bg-white shadow-sm">
+                    <thead style="background: #68217a; color: white;">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Teléfono</th>
+                            <th>Correo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var c in IndexModel.ListaContactos)
+                        {
+                            <tr>
+                                <td>@c.Nombre</td>
+                                <td>@c.Telefono</td>
+                                <td>@c.Correo</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
