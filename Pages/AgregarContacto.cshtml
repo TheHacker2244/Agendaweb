@@ -1,0 +1,37 @@
+@page
+@model MiAgendaWeb.Pages.AgregarContactoModel
+@{
+    ViewData["Title"] = "Nuevo Contacto";
+}
+
+<div class="container mt-5">
+    <div class="card shadow border-0" style="max-width: 500px; margin: auto;">
+        <div class="card-header text-white text-center" style="background: #68217a;">
+            <h4 class="mb-0">Nuevo Contacto</h4>
+        </div>
+        <div class="card-body p-4">
+            <form method="post">
+                <div class="mb-3">
+                    <label class="form-label">Nombre</label>
+                    <input type="text" name="nombre" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Apellido</label>
+                    <input type="text" name="apellido" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Teléfono</label>
+                    <input type="tel" name="telefono" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Correo</label>
+                    <input type="email" name="correo" class="form-control" required />
+                </div>
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn text-white" style="background: #68217a;">Guardar en Agenda</button>
+                    <a asp-page="/Index" class="btn btn-outline-secondary">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
