@@ -1,7 +1,8 @@
+using MiAgendaWeb.Data;
+using MiAgendaWeb.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore; // Necesario para .ToListAsync()
-using MiAgendaWeb.Data; // Donde está tu AppDbContext
-using MiAgendaWeb.Models; // Donde están tus modelos
+using Microsoft.EntityFrameworkCore;
 
 namespace MiAgendaWeb.Pages
 {
@@ -9,19 +10,25 @@ namespace MiAgendaWeb.Pages
     {
         private readonly AppDbContext _context;
 
-        // El constructor recibe la conexión de base de datos automáticamente
         public IndexModel(AppDbContext context)
         {
             _context = context;
         }
 
-        // Esta lista ahora se llenará con datos reales de SQL Server
         public List<Contacto> ListaContactos { get; set; } = new();
 
-        public async Task OnGetAsync()
+        public async Task<IActionResult> OnGetAsync()
         {
-            // Consultamos la tabla Contactos en SQL Server
+            // VERIFICACIÓN DE SEGURIDAD
+            var usuarioSesion = HttpContext.Session.GetString("Usuario");
+
+            if (string.IsNullOrEmpty(usuarioSesion))
+            {
+                return RedirectToPage("/Login/Index");
+            }
+
             ListaContactos = await _context.Contactos.ToListAsync();
+            return Page();
         }
     }
 }

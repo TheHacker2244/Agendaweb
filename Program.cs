@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.EntityFrameworkCore; // Necesario para usar UseSqlServer
+using Microsoft.EntityFrameworkCore;
 using System.IO;
-using MiAgendaWeb.Data; 
+using MiAgendaWeb.Data;
 
 var builder = WebApplication.CreateBuilder(new WebApplicationOptions
 {
@@ -12,11 +12,17 @@ var builder = WebApplication.CreateBuilder(new WebApplicationOptions
     WebRootPath = "wwwroot"
 });
 
-// --- SECCIÓN DE CONEXIÓN A BASE DE DATOS ---
-// Aquí le decimos a la app que use la cadena de conexión que tenemos en el archivo JSON
+// 1. Configurar la Base de Datos
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-// --------------------------------------------
+
+// 2. Configurar Sesiones (Indispensable para el Login)
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 
 builder.Services.AddRazorPages();
 
@@ -29,9 +35,13 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles(); // Activa CSS, imágenes y JS de wwwroot
+app.UseStaticFiles();
 
 app.UseRouting();
+
+// 3. Activar el uso de Sesiones (DEBE ir entre Routing y Authorization)
+app.UseSession();
+
 app.UseAuthorization();
 app.MapRazorPages();
 

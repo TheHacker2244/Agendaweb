@@ -16,6 +16,19 @@ Este proyecto es un gestor de contactos desarrollado en ASP.NET Core con SQL Ser
    - Asegúrate de que `Database=AgendaDB` y `Trusted_Connection=True`.
 
 ## 3. Instalación de Dependencias y Túneles
-Para que el proyecto funcione correctamente con Entity Framework:
-1. Abre la **Consola de Administrador de Paquetes** en Visual Studio.
-2. Ejecuta: `dotnet restore` para instalar los paquetes NuGet necesarios.
+Para que el proyecto pueda comunicarse con la base de datos y gestionar las migraciones, instala estos dos paquetes fundamentales desde la terminal o la Consola de Administrador de Paquetes:
+
+* **Soporte para SQL Server:** `dotnet add package Microsoft.EntityFrameworkCore.SqlServer`
+* **Herramientas de Diseño:** `dotnet add package Microsoft.EntityFrameworkCore.Design`
+
+Luego, ejecuta `dotnet restore` para asegurar que el entorno esté listo.
+
+## 4. Acceso al Sistema (Login)
+El proyecto implementa un sistema de autenticación basado en **Sesiones de ASP.NET Core** para proteger las rutas privadas.
+
+### Credenciales de Acceso (Modo Desarrollo)
+Para las pruebas de evaluación, se han configurado las siguientes credenciales temporales:
+
+* **Usuario:** `admin@1.com`
+* **Contraseña:** `admin123`
+
