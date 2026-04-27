@@ -17,7 +17,7 @@ namespace MiAgendaWeb.Pages.Login
             if (Email == "admin@1.com" && Password == "admin123")
             {
                 HttpContext.Session.SetString("Usuario", "Admin");
-                return RedirectToPage("/Index");
+                return RedirectToPage("/Home/Index");
             }
 
             ViewData["ErrorMessage"] = "Credenciales incorrectas.";

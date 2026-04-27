@@ -1,98 +1,54 @@
 ﻿@page
 @model MiAgendaWeb.Pages.Home.IndexModel
 @{
-    Layout = null; // Mantenemos Layout null para no heredar estilos que rompan tu diseño
+    Layout = null;
 }
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard - MiAgendaWeb</title>
+    <title>Lobby - MiAgendaWeb</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-gray-50 text-gray-800 min-h-screen font-sans">
-
+<body class="bg-gray-50 min-h-screen font-sans">
     <nav class="bg-white border-b border-gray-200 p-4 shadow-sm">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <span class="text-2xl font-bold text-purple-800">MiAgenda<span class="text-purple-600">Web</span></span>
-            </div>
-
-            <div class="flex items-center gap-4">
-                <div class="text-right hidden md:block">
-                    <p class="text-sm font-bold text-gray-900 uppercase">Admin</p>
-                    <p class="text-xs text-gray-500">Sesión Activa</p>
-                </div>
-                <button class="bg-white border border-red-100 text-red-500 hover:bg-red-50 px-4 py-2 rounded-lg text-sm font-semibold transition-all flex items-center gap-2">
-                    <i data-lucide="log-out" class="w-4 h-4"></i> Cerrar Sesión
-                </button>
-            </div>
+            <span class="text-2xl font-bold text-purple-800">MiAgenda<span class="text-purple-600">Web</span></span>
+            <a href="/Login" class="text-red-500 hover:bg-red-50 px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2 border border-red-100 transition-all">
+                <i data-lucide="log-out" class="w-4 h-4"></i> Cerrar Sesión
+            </a>
         </div>
     </nav>
 
     <main class="max-w-6xl mx-auto p-8">
-        <div class="mb-10">
-            <h1 class="text-3xl font-extrabold text-gray-900 tracking-tight">Bienvenido a tu Agenda</h1>
-            <p class="text-gray-500 mt-1">Gestiona tus contactos y exporta tu información de manera segura.</p>
+        <div class="mb-10 text-center md:text-left">
+            <h1 class="text-4xl font-black text-gray-900 tracking-tight">Panel Principal</h1>
+            <p class="text-gray-500 mt-2">Bienvenido, Admin. ¿Qué deseas gestionar hoy?</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-            <div class="md:col-span-2 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-                <label class="block text-xs font-bold text-gray-400 mb-3 uppercase tracking-widest">Buscador Global</label>
-                <div class="relative text-gray-400">
-                    <i data-lucide="search" class="absolute left-3 top-3.5 w-5 h-5"></i>
-                    <input type="text" placeholder="Filtrar por nombre, apellido o correo..."
-                           class="w-full bg-gray-50 border border-gray-200 rounded-xl py-3 pl-10 pr-4 focus:ring-2 focus:ring-purple-500 outline-none transition-all text-sm">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="group bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-purple-200 transition-all cursor-pointer">
+                <div class="w-14 h-14 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-purple-600 group-hover:text-white transition-all">
+                    <i data-lucide="users" class="w-7 h-7"></i>
                 </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Mis Contactos</h3>
+                <p class="text-gray-500 text-sm mb-6">Administra, busca y edita toda tu red de contactos de la base de datos.</p>
+                <a href="Index" class="inline-flex items-center gap-2 text-purple-600 font-bold hover:gap-4 transition-all text-sm uppercase tracking-widest">
+                    Entrar ahora <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
             </div>
 
-            <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-center">
-                <button class="w-full bg-purple-700 hover:bg-purple-800 text-white font-bold py-3.5 px-6 rounded-xl shadow-lg shadow-purple-200 transition-all flex items-center justify-center gap-2">
-                    <i data-lucide="user-plus" class="w-5 h-5"></i> Nuevo Contacto
-                </button>
-            </div>
-        </div>
-
-        <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-            <div class="p-6 border-b border-gray-50 flex flex-col md:flex-row justify-between items-center gap-4">
-                <h2 class="font-bold text-gray-800 flex items-center gap-2">
-                    <i data-lucide="layout-list" class="text-purple-600 w-5 h-5"></i> Lista de Contactos
-                </h2>
-                <div class="flex gap-2">
-                    <button class="text-[10px] font-black uppercase tracking-widest text-emerald-600 border border-emerald-100 bg-emerald-50/50 px-3 py-2 rounded-lg hover:bg-emerald-100 transition-all flex items-center gap-2">
-                        <i data-lucide="file-spreadsheet" class="w-3.5 h-3.5"></i> Excel
-                    </button>
-                    <button class="text-[10px] font-black uppercase tracking-widest text-rose-600 border border-rose-100 bg-rose-50/50 px-3 py-2 rounded-lg hover:bg-rose-100 transition-all flex items-center gap-2">
-                        <i data-lucide="file-text" class="w-3.5 h-3.5"></i> PDF
-                    </button>
+            <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm opacity-60">
+                <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                    <i data-lucide="bar-chart-3" class="w-7 h-7"></i>
                 </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Reportes</h3>
+                <p class="text-gray-500 text-sm mb-6">Próximamente: Gráficas de crecimiento y actividad de tu agenda.</p>
+                <span class="text-xs font-bold text-blue-400 uppercase tracking-widest">En desarrollo</span>
             </div>
 
-            <div class="overflow-x-auto">
-                <table class="w-full text-left">
-                    <thead class="bg-gray-50/50 border-b border-gray-100 text-gray-400 text-[11px] font-bold uppercase tracking-tighter">
-                        <tr>
-                            <th class="px-8 py-4">Nombre</th>
-                            <th class="px-8 py-4">Teléfono</th>
-                            <th class="px-8 py-4">Correo</th>
-                            <th class="px-8 py-4 text-center">Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-50">
-                        <tr class="hover:bg-purple-50/20 transition-colors">
-                            <td class="px-8 py-5 font-bold text-gray-900">Dennisse Zelaya</td>
-                            <td class="px-8 py-5 text-gray-600">7004-6534</td>
-                            <td class="px-8 py-5 text-gray-500 font-medium">dennis@gmail.com</td>
-                            <td class="px-8 py-5 flex justify-center gap-5">
-                                <button class="text-blue-400 hover:text-blue-600 transition-colors"><i data-lucide="pencil" class="w-4 h-4"></i></button>
-                                <button class="text-red-300 hover:text-red-600 transition-colors"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
         </div>
     </main>
 
