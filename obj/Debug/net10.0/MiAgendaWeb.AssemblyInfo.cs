@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MiAgendaWeb")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+79d9c572001974588c297d0e41e4443798604cf7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+295e3cbb902ea80144d90cb32a69ccd5ab3dd4ca")]
 [assembly: System.Reflection.AssemblyProductAttribute("MiAgendaWeb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MiAgendaWeb")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

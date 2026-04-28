@@ -16,6 +16,9 @@ var builder = WebApplication.CreateBuilder(new WebApplicationOptions
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddScoped<MiAgendaWeb.Services.ContactoService>();
+
+
 // 2. Configurar Sesiones (Indispensable para el Login)
 builder.Services.AddSession(options =>
 {
