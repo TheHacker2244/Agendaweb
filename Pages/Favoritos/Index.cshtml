@@ -1,0 +1,72 @@
+﻿@page
+@model MiAgendaWeb.Pages.Favoritos.IndexModel
+@{
+    ViewData["Title"] = "Mis Favoritos";
+}
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<div class="container mt-5">
+    <div class="mb-5 text-center">
+        <div class="inline-block p-3 rounded-full bg-yellow-100 mb-3">
+            <i data-lucide="star" class="w-8 h-8 text-yellow-500 fill-current"></i>
+        </div>
+        <h1 class="text-4xl font-black text-gray-900">Contactos Destacados</h1>
+        <p class="text-gray-500">Tu círculo más cercano en un solo lugar</p>
+    </div>
+
+    @if (!Model.MisFavoritos.Any())
+    {
+        <div class="text-center py-10 bg-gray-50 rounded-3xl border-2 border-dashed border-gray-200">
+            <p class="text-gray-400">Aún no tienes contactos favoritos.</p>
+            <a asp-page="/Index" class="text-purple-600 fw-bold">Ir a mis contactos</a>
+        </div>
+    }
+    else
+    {
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            @foreach (var c in Model.MisFavoritos)
+            {
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-lg rounded-3xl transition-all hover:-translate-y-2" style="background: linear-gradient(to bottom, #ffffff, #fffdf0);">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div class="w-14 h-14 rounded-2xl d-flex align-items-center justify-content-center text-white fw-bold shadow-md"
+                                     style="background: #68217a;">
+                                    @c.Nombre.Substring(0, 1).ToUpper()
+                                </div>
+
+                                @* Al darle clic aquí, se "apaga" y desaparece de esta lista *@
+                                <form method="post" asp-page-handler="QuitarFavorito" asp-route-id="@c.Id">
+                                    <button type="submit" class="border-0 bg-transparent">
+                                        <i data-lucide="star" class="w-6 h-6 text-yellow-500 fill-current shadow-sm"></i>
+                                    </button>
+                                </form>
+                            </div>
+
+                            <h4 class="fw-bold text-gray-900">@c.Nombre @c.Apellido</h4>
+                            <p class="text-sm text-purple-600 mb-3 fw-medium">Contacto VIP</p>
+
+                            <div class="space-y-2 border-top pt-3">
+                                <div class="d-flex align-items-center gap-3 text-gray-600">
+                                    <i data-lucide="phone" class="w-4 h-4 text-yellow-600"></i>
+                                    <span class="text-sm">@c.Telefono</span>
+                                </div>
+                                <div class="d-flex align-items-center gap-3 text-gray-600">
+                                    <i data-lucide="mail" class="w-4 h-4 text-yellow-600"></i>
+                                    <span class="text-sm">@c.Correo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+
+    <div class="mt-5 text-center">
+        <a asp-page="/Home/Index" class="btn btn-light rounded-pill px-4">Volver al Panel</a>
+    </div>
+</div>
+
+<script>lucide.createIcons();</script>

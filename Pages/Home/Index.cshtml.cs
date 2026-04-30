@@ -30,7 +30,7 @@ namespace MiAgendaWeb.Pages.Home
                 return RedirectToPage("/Login/Index");
             }
 
-            // Si el usuario intentó buscar algo desde el lobby, lo mandamos a la lista de contactos con el filtro
+            // Si el usuario intentó buscar algo desde el lobby, lo mandamos a la lista general con el filtro
             if (!string.IsNullOrEmpty(SearchTerm))
             {
                 return RedirectToPage("/Index", new { searchTerm = SearchTerm });

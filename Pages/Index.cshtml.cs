@@ -17,13 +17,11 @@ namespace MiAgendaWeb.Pages
 
         public List<Contacto> ListaContactos { get; set; } = new();
 
-        // Captura el término de búsqueda desde la URL
         [BindProperty(SupportsGet = true)]
         public string SearchTerm { get; set; }
 
         public async Task<IActionResult> OnGetAsync()
         {
-            // VERIFICACIÓN DE SEGURIDAD
             var usuarioSesion = HttpContext.Session.GetString("Usuario");
 
             if (string.IsNullOrEmpty(usuarioSesion))
@@ -31,7 +29,6 @@ namespace MiAgendaWeb.Pages
                 return RedirectToPage("/Login/Index");
             }
 
-            // Lógica de búsqueda avanzada
             var query = _context.Contactos.AsQueryable();
 
             if (!string.IsNullOrEmpty(SearchTerm))
@@ -43,6 +40,20 @@ namespace MiAgendaWeb.Pages
 
             ListaContactos = await query.ToListAsync();
             return Page();
+        }
+
+        // --- NUEVO MÉTODO PARA FAVORITOS ---
+        public async Task<IActionResult> OnPostMarcarFavoritoAsync(int id)
+        {
+            var contacto = await _context.Contactos.FindAsync(id);
+            if (contacto != null)
+            {
+                // Cambia el valor al opuesto (Toggle)
+                contacto.EsFavorito = !contacto.EsFavorito;
+                await _context.SaveChangesAsync();
+            }
+            // Recargamos la página para mostrar el cambio
+            return RedirectToPage();
         }
     }
 }

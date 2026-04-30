@@ -20,5 +20,8 @@ namespace MiAgendaWeb.Models
         public string Correo { get; set; } = "";
 
         public DateTime FechaRegistro { get; set; } = DateTime.Now;
+
+        // Propiedad añadida para el sistema de favoritos
+        public bool EsFavorito { get; set; } = false;
     }
 }

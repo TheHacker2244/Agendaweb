@@ -19,7 +19,6 @@
             </a>
         </div>
 
-        @* BUSCADOR Y FILTROS *@
         <form method="get" class="mt-6 flex flex-wrap gap-3">
             <div class="relative flex-grow max-w-md">
                 <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5"></i>
@@ -31,7 +30,7 @@
         </form>
     </div>
 
-    @* --- GRID DE CONTACTOS (ESTILO WHATSAPP/TARJETAS) --- *@
+    @* --- GRID DE CONTACTOS --- *@
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         @foreach (var c in Model.ListaContactos)
         {
@@ -39,20 +38,21 @@
                 <div class="card h-100 border-0 shadow-sm rounded-3xl hover:shadow-md transition-all border-start border-4 @(c.Nombre.Length > 6 ? "border-purple-500" : "border-blue-500")">
                     <div class="card-body p-4">
                         <div class="d-flex justify-content-between align-items-start mb-3">
-                            @* Avatar circular con inicial *@
                             <div class="w-12 h-12 rounded-circle d-flex align-items-center justify-content-center text-white fw-bold shadow-sm"
                                  style="background: linear-gradient(135deg, #68217a, #a142b3); font-size: 1.2rem;">
                                 @c.Nombre.Substring(0, 1).ToUpper()
                             </div>
-                            @* Icono de Favorito (Estrella) *@
-                            <button class="border-0 bg-transparent text-yellow-400 hover:scale-125 transition-all">
-                                <i data-lucide="star" class="w-5 h-5 @(c.Id % 2 == 0 ? "fill-current" : "")"></i>
-                            </button>
+
+                            @* --- FORMULARIO PARA LA ESTRELLA --- *@
+                            <form method="post" asp-page-handler="MarcarFavorito" asp-route-id="@c.Id">
+                                <button type="submit" class="border-0 bg-transparent transition-all hover:scale-125">
+                                    <i data-lucide="star" class="w-5 h-5 @(c.EsFavorito ? "text-yellow-400 fill-current" : "text-gray-300")"></i>
+                                </button>
+                            </form>
                         </div>
 
                         <h5 class="card-title fw-black text-gray-900 mb-1">@c.Nombre @c.Apellido</h5>
 
-                        @* Badge de Categoría *@
                         <span class="badge rounded-pill mb-3" style="background: #f3e8ff; color: #68217a; font-size: 0.7rem; letter-spacing: 0.05em;">
                             PERSONAL
                         </span>
