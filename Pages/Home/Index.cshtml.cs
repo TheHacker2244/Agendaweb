@@ -17,6 +17,10 @@ namespace MiAgendaWeb.Pages.Home
 
         public IList<Contacto> Contactos { get; set; }
 
+        // Añadimos propiedad para capturar la búsqueda global
+        [BindProperty(SupportsGet = true)]
+        public string SearchTerm { get; set; }
+
         public async Task<IActionResult> OnGetAsync()
         {
             // Seguridad de sesión
@@ -24,6 +28,12 @@ namespace MiAgendaWeb.Pages.Home
             if (string.IsNullOrEmpty(usuario))
             {
                 return RedirectToPage("/Login/Index");
+            }
+
+            // Si el usuario intentó buscar algo desde el lobby, lo mandamos a la lista de contactos con el filtro
+            if (!string.IsNullOrEmpty(SearchTerm))
+            {
+                return RedirectToPage("/Index", new { searchTerm = SearchTerm });
             }
 
             // Carga real de la base de datos

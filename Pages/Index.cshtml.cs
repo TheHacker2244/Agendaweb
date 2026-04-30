@@ -17,6 +17,10 @@ namespace MiAgendaWeb.Pages
 
         public List<Contacto> ListaContactos { get; set; } = new();
 
+        // Captura el término de búsqueda desde la URL
+        [BindProperty(SupportsGet = true)]
+        public string SearchTerm { get; set; }
+
         public async Task<IActionResult> OnGetAsync()
         {
             // VERIFICACIÓN DE SEGURIDAD
@@ -27,7 +31,17 @@ namespace MiAgendaWeb.Pages
                 return RedirectToPage("/Login/Index");
             }
 
-            ListaContactos = await _context.Contactos.ToListAsync();
+            // Lógica de búsqueda avanzada
+            var query = _context.Contactos.AsQueryable();
+
+            if (!string.IsNullOrEmpty(SearchTerm))
+            {
+                query = query.Where(c => c.Nombre.Contains(SearchTerm) ||
+                                         c.Apellido.Contains(SearchTerm) ||
+                                         c.Correo.Contains(SearchTerm));
+            }
+
+            ListaContactos = await query.ToListAsync();
             return Page();
         }
     }
