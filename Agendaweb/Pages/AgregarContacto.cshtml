@@ -1,0 +1,60 @@
+@page
+@model MiAgendaWeb.Pages.AgregarContactoModel
+@{
+    ViewData["Title"] = "Nuevo Contacto";
+}
+
+<div class="container mt-5">
+    <div class="card shadow border-0" style="max-width: 500px; margin: auto;">
+        <div class="card-header text-white text-center" style="background: #68217a;">
+            <h4 class="mb-0">Nuevo Contacto</h4>
+        </div>
+        <div class="card-body p-4">
+
+            @* 1. ESTE BLOQUE MUESTRA LOS ERRORES DE LÓGICA DE NEGOCIO (COMO EL CORREO REPETIDO) *@
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="alert alert-danger shadow-sm border-start border-4 border-danger">
+                    <div asp-validation-summary="All" class="text-danger fw-bold"></div>
+                </div>
+            }
+
+            <form method="post">
+                @* 2. USAMOS asp-for PARA CONECTAR CON EL MODELO Y QUE NO SE BORRE LA INFO *@
+                <div class="mb-3">
+                    <label class="form-label">Nombre</label>
+                    <input asp-for="NuevoContacto.Nombre" class="form-control" />
+                    <span asp-validation-for="NuevoContacto.Nombre" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Apellido</label>
+                    <input asp-for="NuevoContacto.Apellido" class="form-control" />
+                    <span asp-validation-for="NuevoContacto.Apellido" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Teléfono</label>
+                    <input asp-for="NuevoContacto.Telefono" class="form-control" />
+                    <span asp-validation-for="NuevoContacto.Telefono" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Correo</label>
+                    <input asp-for="NuevoContacto.Correo" class="form-control" />
+                    <span asp-validation-for="NuevoContacto.Correo" class="text-danger small"></span>
+                </div>
+
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn text-white" style="background: #68217a;">Guardar en Agenda</button>
+                    <a asp-page="/Index" class="btn btn-outline-secondary">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@* 3. SCRIPTS PARA VALIDACIÓN EN TIEMPO REAL (OPCIONAL PERO RECOMENDADO) *@
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

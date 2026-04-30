@@ -1,0 +1,82 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Mis Contactos";
+}
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<div class="container mt-5">
+    @* --- CABECERA Y BUSCADOR --- *@
+    <div class="mb-8">
+        <div class="flex flex-col md:flex-row justify-between items-end gap-4">
+            <div>
+                <h1 class="text-3xl font-black text-gray-900 tracking-tight">📇 Mis Contactos</h1>
+                <p class="text-gray-500">Gestiona y organiza tu red de contactos</p>
+            </div>
+            <a asp-page="/AgregarContacto" class="btn text-white px-4 py-2 rounded-xl shadow-lg transition-all hover:scale-105" style="background: #68217a;">
+                <i data-lucide="user-plus" class="inline-block w-4 h-4 mr-2"></i> Nuevo Contacto
+            </a>
+        </div>
+
+        @* BUSCADOR Y FILTROS *@
+        <form method="get" class="mt-6 flex flex-wrap gap-3">
+            <div class="relative flex-grow max-w-md">
+                <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5"></i>
+                <input type="text" name="searchTerm" value="@Model.SearchTerm" placeholder="Buscar por nombre o correo..."
+                       class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 outline-none transition-all" />
+            </div>
+            <button type="submit" class="btn btn-dark rounded-xl px-4">Filtrar</button>
+            <a asp-page="/Index" class="btn btn-outline-secondary rounded-xl px-4">Limpiar</a>
+        </form>
+    </div>
+
+    @* --- GRID DE CONTACTOS (ESTILO WHATSAPP/TARJETAS) --- *@
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        @foreach (var c in Model.ListaContactos)
+        {
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm rounded-3xl hover:shadow-md transition-all border-start border-4 @(c.Nombre.Length > 6 ? "border-purple-500" : "border-blue-500")">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            @* Avatar circular con inicial *@
+                            <div class="w-12 h-12 rounded-circle d-flex align-items-center justify-content-center text-white fw-bold shadow-sm"
+                                 style="background: linear-gradient(135deg, #68217a, #a142b3); font-size: 1.2rem;">
+                                @c.Nombre.Substring(0, 1).ToUpper()
+                            </div>
+                            @* Icono de Favorito (Estrella) *@
+                            <button class="border-0 bg-transparent text-yellow-400 hover:scale-125 transition-all">
+                                <i data-lucide="star" class="w-5 h-5 @(c.Id % 2 == 0 ? "fill-current" : "")"></i>
+                            </button>
+                        </div>
+
+                        <h5 class="card-title fw-black text-gray-900 mb-1">@c.Nombre @c.Apellido</h5>
+
+                        @* Badge de Categoría *@
+                        <span class="badge rounded-pill mb-3" style="background: #f3e8ff; color: #68217a; font-size: 0.7rem; letter-spacing: 0.05em;">
+                            PERSONAL
+                        </span>
+
+                        <div class="space-y-2 text-sm text-gray-600">
+                            <p class="d-flex align-items-center gap-2 mb-1">
+                                <i data-lucide="phone" class="w-4 h-4 text-gray-400"></i> @c.Telefono
+                            </p>
+                            <p class="d-flex align-items-center gap-2">
+                                <i data-lucide="mail" class="w-4 h-4 text-gray-400"></i> @c.Correo
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card-footer bg-transparent border-0 p-4 pt-0 d-flex gap-2">
+                        <a href="#" class="btn btn-light btn-sm rounded-pill flex-grow-1 fw-bold text-muted">Perfil</a>
+                        <button class="btn btn-light btn-sm rounded-circle p-2 text-red-400 hover:bg-red-50">
+                            <i data-lucide="trash-2" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<script>lucide.createIcons();</script>
