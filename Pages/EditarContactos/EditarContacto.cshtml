@@ -1,0 +1,119 @@
+﻿@page "{id:int?}"
+@model MiAgendaWeb.Pages.EditarContactos.EditarContactoModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión Avanzada - MiAgendaWeb</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-gray-50 h-screen overflow-hidden flex flex-col font-sans">
+
+    <nav class="bg-white border-b border-gray-200 p-4 shadow-sm z-10">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="/Home" class="flex items-center gap-2 text-purple-800 font-bold">
+                <i data-lucide="chevron-left"></i> Volver al Panel
+            </a>
+            <h2 class="text-xl font-black text-gray-800">CENTRO DE GESTIÓN TOTAL</h2>
+            <div class="w-20"></div>
+        </div>
+    </nav>
+
+    <div class="flex flex-1 overflow-hidden">
+
+        <aside class="w-1/3 bg-white border-r border-gray-200 overflow-y-auto p-4 space-y-3">
+            <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Contactos en Agenda</p>
+
+            @foreach (var c in Model.ListaContactos)
+            {
+                <a href="/EditarContactos/EditarContacto/@c.Id"
+                   class="block group p-4 rounded-2xl border @(Model.ContactoSeleccionado?.Id == c.Id ? "border-purple-500 bg-purple-50" : "border-gray-100 hover:bg-gray-50") transition-all shadow-sm">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-purple-600 flex items-center justify-center text-white font-bold">
+                            @c.Nombre[0]
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-gray-900">@c.Nombre @c.Apellido</h4>
+                            <p class="text-xs text-gray-500">@c.Telefono</p>
+                        </div>
+                        @if (c.EsFavorito)
+                        {
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-current"></i>
+                        }
+                    </div>
+                </a>
+            }
+        </aside>
+
+        <main class="flex-1 bg-gray-50 p-12 overflow-y-auto">
+            @if (Model.ContactoSeleccionado == null)
+            {
+                <div class="h-full flex flex-col items-center justify-center text-gray-400">
+                    <i data-lucide="mouse-pointer-2" class="w-16 h-16 mb-4 animate-bounce"></i>
+                    <p class="text-xl font-medium">Selecciona un contacto para administrarlo</p>
+                </div>
+            }
+            else
+            {
+                <div class="max-w-2xl mx-auto bg-white rounded-[2.5rem] shadow-2xl border border-white overflow-hidden">
+                    <div class="bg-gradient-to-r from-purple-600 to-indigo-700 p-10 text-white relative">
+                        <div class="flex items-center gap-6">
+                            <div class="w-24 h-24 bg-white/20 backdrop-blur-md rounded-3xl flex items-center justify-center text-4xl font-black border border-white/30">
+                                @Model.ContactoSeleccionado.Nombre[0]
+                            </div>
+                            <div>
+                                <h1 class="text-3xl font-black">@Model.ContactoSeleccionado.Nombre @Model.ContactoSeleccionado.Apellido</h1>
+                                <p class="text-purple-100 uppercase tracking-tighter text-sm font-bold opacity-80">Perfil Detallado</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form method="post" class="p-10 space-y-6">
+                        <input type="hidden" asp-for="ContactoSeleccionado.Id" />
+
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold text-gray-400 uppercase">Nombre</label>
+                                <input asp-for="ContactoSeleccionado.Nombre" class="w-full bg-gray-50 border-none rounded-2xl p-4 focus:ring-2 focus:ring-purple-500 transition-all font-semibold" />
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold text-gray-400 uppercase">Apellido</label>
+                                <input asp-for="ContactoSeleccionado.Apellido" class="w-full bg-gray-50 border-none rounded-2xl p-4 focus:ring-2 focus:ring-purple-500 transition-all font-semibold" />
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-gray-400 uppercase">Correo Electrónico</label>
+                            <input asp-for="ContactoSeleccionado.Correo" class="w-full bg-gray-50 border-none rounded-2xl p-4 focus:ring-2 focus:ring-purple-500 transition-all font-semibold" />
+                        </div>
+
+                        <div class="flex items-center gap-3 pt-6">
+                            <button type="submit" class="flex-1 bg-purple-600 text-white font-bold py-4 rounded-2xl hover:bg-purple-700 transition-all flex items-center justify-center gap-2 shadow-lg shadow-purple-200">
+                                <i data-lucide="save" class="w-5 h-5"></i> ACTUALIZAR
+                            </button>
+
+                            <button type="submit" asp-page-handler="Favorito" asp-route-id="@Model.ContactoSeleccionado.Id" asp-route-estado="@(!Model.ContactoSeleccionado.EsFavorito)"
+                                    class="p-4 rounded-2xl border @(Model.ContactoSeleccionado.EsFavorito ? "bg-yellow-50 border-yellow-200 text-yellow-600" : "bg-gray-100 border-gray-200 text-gray-400")">
+                                <i data-lucide="star" class="w-6 h-6 @(Model.ContactoSeleccionado.EsFavorito ? "fill-current" : "")"></i>
+                            </button>
+
+                            <button type="submit" asp-page-handler="Eliminar" asp-route-id="@Model.ContactoSeleccionado.Id"
+                                    class="p-4 bg-red-50 text-red-500 rounded-2xl border border-red-100 hover:bg-red-500 hover:text-white transition-all shadow-sm"
+                                    onclick="return confirm('¿Eliminar permanentemente?')">
+                                <i data-lucide="trash-2" class="w-6 h-6"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            }
+        </main>
+    </div>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>
