@@ -1,48 +1,37 @@
-﻿using MiAgendaWeb.Data;
-using MiAgendaWeb.Models;
+﻿using MiAgendaWeb.Models;
+using MiAgendaWeb.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
 
 namespace MiAgendaWeb.Pages.Favoritos
 {
     public class IndexModel : PageModel
     {
-        private readonly AppDbContext _context;
+        private readonly ContactoService _contactoService;
 
-        public IndexModel(AppDbContext context)
+        public IndexModel(ContactoService contactoService)
         {
-            _context = context;
+            _contactoService = contactoService;
         }
 
         public List<Contacto> MisFavoritos { get; set; } = new();
 
         public async Task<IActionResult> OnGetAsync()
         {
+            // Verificación de sesión opcional si quieres proteger la página
             var usuarioSesion = HttpContext.Session.GetString("Usuario");
-            if (string.IsNullOrEmpty(usuarioSesion))
-            {
-                return RedirectToPage("/Login/Index");
-            }
+            if (string.IsNullOrEmpty(usuarioSesion)) return RedirectToPage("/Login/Index");
 
-            // FILTRO CRÍTICO: Solo favoritos
-            MisFavoritos = await _context.Contactos
-                .Where(c => c.EsFavorito == true)
-                .ToListAsync();
-
+            var todos = await _contactoService.ObtenerTodosAsync();
+            MisFavoritos = todos.Where(c => c.EsFavorito).ToList();
             return Page();
         }
 
-        // Método para "quitar" de favoritos desde esta misma pantalla
         public async Task<IActionResult> OnPostQuitarFavoritoAsync(int id)
         {
-            var contacto = await _context.Contactos.FindAsync(id);
-            if (contacto != null)
-            {
-                contacto.EsFavorito = false; // Lo apagamos
-                await _context.SaveChangesAsync();
-            }
+            await _contactoService.CambiarEstadoFavoritoAsync(id, false);
             return RedirectToPage();
         }
+
     }
 }

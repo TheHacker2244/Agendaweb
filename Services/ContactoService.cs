@@ -13,44 +13,59 @@ namespace MiAgendaWeb.Services
             _context = context;
         }
 
-        // Método para obtener todos los contactos
-        public async Task<List<Contacto>> ObtenerTodosAsync()
-        {
-            return await _context.Contactos.ToListAsync();
-        }
+        // 1. Obtener lista completa
+        public async Task<List<Contacto>> ObtenerTodosAsync() => await _context.Contactos.ToListAsync();
 
-        // Método con LÓGICA DE NEGOCIO para registrar
+        // 2. Obtener un solo contacto por ID
+        public async Task<Contacto> ObtenerPorIdAsync(int id) => await _context.Contactos.FindAsync(id);
+
+        // 3. Crear nuevo contacto (Con validación de negocio)
         public async Task<(bool Success, string Message)> RegistrarContactoAsync(Contacto nuevo)
         {
-            // 1. Validación: No permitir campos vacíos
-            if (string.IsNullOrWhiteSpace(nuevo.Nombre) || string.IsNullOrWhiteSpace(nuevo.Apellido) || string.IsNullOrWhiteSpace(nuevo.Correo))
-            {
-                return (false, "Regla de Negocio: Todos los campos son obligatorios.");
-            }
+            if (string.IsNullOrWhiteSpace(nuevo.Nombre) || string.IsNullOrWhiteSpace(nuevo.Telefono))
+                return (false, "Nombre y Teléfono son obligatorios.");
 
-            // 2. Validación: Formato de correo electrónico
-            if (!nuevo.Correo.Contains("@") || !nuevo.Correo.Contains("."))
-            {
-                return (false, "Regla de Negocio: El formato del correo no es válido.");
-            }
-
-            // 3. Validación: Evitar registros duplicados
-            var existe = await _context.Contactos.AnyAsync(c => c.Correo == nuevo.Correo);
-            if (existe)
-            {
-                return (false, "Regla de Negocio: Ya existe un contacto con este correo electrónico.");
-            }
-
-            // 4. Validación: Coherencia de datos (Ejemplo: Teléfono no negativo/vacío)
-            if (string.IsNullOrWhiteSpace(nuevo.Telefono))
-            {
-                return (false, "Regla de Negocio: El número de teléfono es necesario.");
-            }
-
-            // Si pasa todas las reglas, guardamos en la base de datos
             _context.Contactos.Add(nuevo);
             await _context.SaveChangesAsync();
-            return (true, "¡Contacto guardado exitosamente!");
+            return (true, "¡Guardado!");
+        }
+
+        // 4. Actualizar contacto existente (Update)
+        public async Task<(bool Success, string Message)> ActualizarContactoAsync(Contacto editado)
+        {
+            var db = await _context.Contactos.FindAsync(editado.Id);
+            if (db == null) return (false, "No encontrado");
+
+            db.Nombre = editado.Nombre;
+            db.Apellido = editado.Apellido;
+            db.Telefono = editado.Telefono;
+            db.Correo = editado.Correo;
+            db.EsFavorito = editado.EsFavorito; // Importante mantener el estado de favorito
+
+            await _context.SaveChangesAsync();
+            return (true, "Actualizado");
+        }
+
+        // 5. Eliminar contacto (Delete)
+        public async Task<bool> EliminarContactoAsync(int id)
+        {
+            var c = await _context.Contactos.FindAsync(id);
+            if (c == null) return false;
+
+            _context.Contactos.Remove(c);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+
+        // 6. Cambiar estado de favorito (El que faltaba dentro de la clase)
+        public async Task CambiarEstadoFavoritoAsync(int id, bool estado)
+        {
+            var contacto = await _context.Contactos.FindAsync(id);
+            if (contacto != null)
+            {
+                contacto.EsFavorito = estado;
+                await _context.SaveChangesAsync();
+            }
         }
     }
 }
