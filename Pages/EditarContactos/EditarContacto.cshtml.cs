@@ -30,9 +30,18 @@ namespace MiAgendaWeb.Pages.EditarContactos
         // Para actualizar los datos cuando des clic al botón morado
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid) return Page();
+            // Si hay un error de validación, debemos volver a cargar la lista de la izquierda
+            // antes de devolver la página, si no, la columna izquierda desaparecerá.
+            if (!ModelState.IsValid)
+            {
+                ListaContactos = await _contactoService.ObtenerTodosAsync();
+                return Page();
+            }
 
-            await _contactoService.ActualizarContactoAsync(ContactoSeleccionado);
+            // Guardar cambios en la DB
+            var resultado = await _contactoService.ActualizarContactoAsync(ContactoSeleccionado);
+
+            // Redirigir para limpiar el estado del formulario y ver los cambios frescos
             return RedirectToPage(new { id = ContactoSeleccionado.Id });
         }
 
