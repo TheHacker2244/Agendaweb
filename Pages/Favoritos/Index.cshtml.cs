@@ -18,7 +18,6 @@ namespace MiAgendaWeb.Pages.Favoritos
 
         public async Task<IActionResult> OnGetAsync()
         {
-            // Verificación de sesión opcional si quieres proteger la página
             var usuarioSesion = HttpContext.Session.GetString("Usuario");
             if (string.IsNullOrEmpty(usuarioSesion)) return RedirectToPage("/Login/Index");
 
@@ -32,6 +31,5 @@ namespace MiAgendaWeb.Pages.Favoritos
             await _contactoService.CambiarEstadoFavoritoAsync(id, false);
             return RedirectToPage();
         }
-
     }
 }

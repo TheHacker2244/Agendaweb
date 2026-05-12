@@ -42,17 +42,27 @@ namespace MiAgendaWeb.Pages
             return Page();
         }
 
-        // --- NUEVO MÉTODO PARA FAVORITOS ---
+        // --- MÉTODO PARA FAVORITOS ---
         public async Task<IActionResult> OnPostMarcarFavoritoAsync(int id)
         {
             var contacto = await _context.Contactos.FindAsync(id);
             if (contacto != null)
             {
-                // Cambia el valor al opuesto (Toggle)
                 contacto.EsFavorito = !contacto.EsFavorito;
                 await _context.SaveChangesAsync();
             }
-            // Recargamos la página para mostrar el cambio
+            return RedirectToPage();
+        }
+
+        // --- NUEVO MÉTODO PARA ELIMINAR (EL QUE FALTABA) ---
+        public async Task<IActionResult> OnPostEliminarAsync(int id)
+        {
+            var contacto = await _context.Contactos.FindAsync(id);
+            if (contacto != null)
+            {
+                _context.Contactos.Remove(contacto);
+                await _context.SaveChangesAsync();
+            }
             return RedirectToPage();
         }
     }

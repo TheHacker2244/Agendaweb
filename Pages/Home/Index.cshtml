@@ -34,16 +34,11 @@
                     <input type="text" name="searchTerm" placeholder="Buscar contacto..."
                            class="pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-2xl w-full sm:w-64 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent shadow-sm transition-all">
                 </form>
-                <button class="bg-white border border-gray-200 p-3 rounded-2xl text-gray-600 hover:text-red-600 hover:border-red-100 hover:bg-red-50 transition-all shadow-sm" title="Exportar PDF">
-                    <i data-lucide="file-text" class="w-6 h-6"></i>
-                </button>
             </div>
         </div>
 
-        @* Grid ajustado a 2 columnas en tablets y 4 en pantallas grandes *@
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-            @* --- TARJETA: MIS CONTACTOS --- *@
             <div class="group bg-white p-6 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-purple-200 transition-all">
                 <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-purple-600 group-hover:text-white transition-all">
                     <i data-lucide="users" class="w-6 h-6"></i>
@@ -55,7 +50,6 @@
                 </a>
             </div>
 
-            @* --- TARJETA: FAVORITOS --- *@
             <div class="group bg-white p-6 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-yellow-200 transition-all">
                 <div class="w-12 h-12 bg-yellow-100 text-yellow-600 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-yellow-500 group-hover:text-white transition-all">
                     <i data-lucide="star" class="w-6 h-6"></i>
@@ -67,7 +61,6 @@
                 </a>
             </div>
 
-            @* --- TARJETA: GESTIÓN TOTAL (CORREGIDA) --- *@
             <div class="group bg-white p-6 rounded-3xl border-2 border-red-50 shadow-sm hover:shadow-xl hover:border-red-200 transition-all">
                 <div class="w-12 h-12 bg-red-100 text-red-600 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-red-600 group-hover:text-white transition-all">
                     <i data-lucide="shield-check" class="w-6 h-6"></i>
@@ -77,16 +70,6 @@
                 <a asp-page="/EditarContactos/EditarContacto" class="inline-flex items-center gap-2 text-red-600 font-bold hover:gap-4 transition-all text-[10px] uppercase tracking-widest">
                     Administrar <i data-lucide="settings" class="w-4 h-4"></i>
                 </a>
-            </div>
-
-            @* --- TARJETA: REPORTES --- *@
-            <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm opacity-60">
-                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-5">
-                    <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
-                </div>
-                <h3 class="text-lg font-bold text-gray-900 mb-2">Reportes</h3>
-                <p class="text-gray-500 text-xs mb-6 leading-relaxed">Gráficas de crecimiento y actividad de tu agenda.</p>
-                <span class="text-[10px] font-bold text-blue-400 uppercase tracking-widest">En desarrollo</span>
             </div>
 
         </div>

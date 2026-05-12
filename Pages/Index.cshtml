@@ -7,30 +7,35 @@
 <script src="https://unpkg.com/lucide@latest"></script>
 
 <div class="container mt-5">
-    @* --- CABECERA Y BUSCADOR --- *@
-    <div class="mb-8">
-        <div class="flex flex-col md:flex-row justify-between items-end gap-4">
-            <div>
+    @* --- CABECERA REORGANIZADA CON BOOTSTRAP --- *@
+    <div class="mb-5">
+        <div class="row align-items-center">
+            @* Título y descripción (Columna izquierda) *@
+            <div class="col-md-6">
                 <h1 class="text-3xl font-black text-gray-900 tracking-tight">📇 Mis Contactos</h1>
                 <p class="text-gray-500">Gestiona y organiza tu red de contactos</p>
             </div>
-            <a asp-page="/AgregarContacto" class="btn text-white px-4 py-2 rounded-xl shadow-lg transition-all hover:scale-105" style="background: #68217a;">
-                <i data-lucide="user-plus" class="inline-block w-4 h-4 mr-2"></i> Nuevo Contacto
-            </a>
-        </div>
 
-        <form method="get" class="mt-6 flex flex-wrap gap-3">
-            <div class="relative flex-grow max-w-md">
-                <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5"></i>
-                <input type="text" name="searchTerm" value="@Model.SearchTerm" placeholder="Buscar por nombre o correo..."
-                       class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 outline-none transition-all" />
+            @* Buscador y Botón Nuevo (Columna derecha - Todo alineado al final) *@
+            <div class="col-md-6 d-flex flex-column align-items-end gap-3">
+                <a asp-page="/AgregarContacto" class="btn text-white px-4 py-2 rounded-xl shadow-lg transition-all hover:scale-105" style="background: #68217a;">
+                    <i data-lucide="user-plus" class="inline-block w-4 h-4 mr-2"></i> Nuevo Contacto
+                </a>
+
+                <form method="get" class="d-flex gap-2">
+                    <div class="position-relative">
+                        <i data-lucide="search" class="position-absolute text-gray-400" style="left: 10px; top: 50%; transform: translateY(-50%); width: 18px;"></i>
+                        <input type="text" name="searchTerm" value="@Model.SearchTerm" placeholder="Buscar..."
+                               class="form-control rounded-xl ps-5" style="width: 250px; border: 1px solid #dee2e6;" />
+                    </div>
+                    <button type="submit" class="btn btn-dark rounded-xl px-4">Filtrar</button>
+                    <a asp-page="/Index" class="btn btn-outline-secondary rounded-xl px-4">Limpiar</a>
+                </form>
             </div>
-            <button type="submit" class="btn btn-dark rounded-xl px-4">Filtrar</button>
-            <a asp-page="/Index" class="btn btn-outline-secondary rounded-xl px-4">Limpiar</a>
-        </form>
+        </div>
     </div>
 
-    @* --- GRID DE CONTACTOS --- *@
+    @* --- GRID DE CONTACTOS (MANTENIENDO TU ESTILO ORIGINAL) --- *@
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         @foreach (var c in Model.ListaContactos)
         {
@@ -43,7 +48,6 @@
                                 @c.Nombre.Substring(0, 1).ToUpper()
                             </div>
 
-                            @* --- FORMULARIO PARA LA ESTRELLA --- *@
                             <form method="post" asp-page-handler="MarcarFavorito" asp-route-id="@c.Id">
                                 <button type="submit" class="border-0 bg-transparent transition-all hover:scale-125">
                                     <i data-lucide="star" class="w-5 h-5 @(c.EsFavorito ? "text-yellow-400 fill-current" : "text-gray-300")"></i>
@@ -57,7 +61,7 @@
                             PERSONAL
                         </span>
 
-                        <div class="space-y-2 text-sm text-gray-600">
+                        <div class="text-sm text-gray-600">
                             <p class="d-flex align-items-center gap-2 mb-1">
                                 <i data-lucide="phone" class="w-4 h-4 text-gray-400"></i> @c.Telefono
                             </p>
@@ -67,11 +71,15 @@
                         </div>
                     </div>
 
-                    <div class="card-footer bg-transparent border-0 p-4 pt-0 d-flex gap-2">
-                        <a href="#" class="btn btn-light btn-sm rounded-pill flex-grow-1 fw-bold text-muted">Perfil</a>
-                        <button class="btn btn-light btn-sm rounded-circle p-2 text-red-400 hover:bg-red-50">
-                            <i data-lucide="trash-2" class="w-4 h-4"></i>
-                        </button>
+                    <div class="card-footer bg-transparent border-0 p-4 pt-0 d-flex gap-2 align-items-center">
+                        <a asp-page="/EditarContactos/EditarContacto" asp-route-id="@c.Id" class="btn btn-light btn-sm rounded-pill flex-grow-1 fw-bold text-muted d-flex align-items-center justify-content-center">
+                            Perfil
+                        </a>
+                        <form method="post" asp-page-handler="Eliminar" asp-route-id="@c.Id" onsubmit="return confirm('¿Estás seguro de eliminar este contacto?');">
+                            <button type="submit" class="btn btn-light btn-sm rounded-circle p-2 text-red-400 hover:bg-red-50 border-0">
+                                <i data-lucide="trash-2" class="w-4 h-4"></i>
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>

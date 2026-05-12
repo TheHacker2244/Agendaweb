@@ -3,28 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|c:\\users\\user\\onedrive\\desktop\\agendaweb\\pages\\editarcontactos\\editarcontacto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|solutionrelative:pages\\editarcontactos\\editarcontacto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|c:\\users\\user\\onedrive\\desktop\\agendaweb\\pages\\editarcontactos\\editarcontacto.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|solutionrelative:pages\\editarcontactos\\editarcontacto.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|c:\\users\\user\\onedrive\\desktop\\agendaweb\\pages\\favoritos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|solutionrelative:pages\\favoritos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|c:\\users\\user\\onedrive\\desktop\\agendaweb\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|c:\\users\\user\\onedrive\\desktop\\agendaweb\\pages\\favoritos\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|solutionrelative:pages\\favoritos\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|c:\\users\\user\\onedrive\\desktop\\agendaweb\\services\\contactoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|solutionrelative:services\\contactoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|c:\\users\\user\\onedrive\\desktop\\agendaweb\\pages\\home\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|solutionrelative:pages\\home\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|c:\\users\\user\\onedrive\\desktop\\agendaweb\\pages\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -35,8 +23,24 @@
       "RelativeMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|solutionrelative:pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|c:\\users\\user\\onedrive\\desktop\\agendaweb\\pages\\home\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|solutionrelative:pages\\home\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|c:\\users\\user\\onedrive\\desktop\\agendaweb\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|solutionrelative:pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|c:\\users\\user\\onedrive\\desktop\\agendaweb\\pages\\editarcontactos\\editarcontacto.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|solutionrelative:pages\\editarcontactos\\editarcontacto.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|c:\\users\\user\\onedrive\\desktop\\agendaweb\\pages\\editarcontactos\\editarcontacto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|solutionrelative:pages\\editarcontactos\\editarcontacto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|c:\\users\\user\\onedrive\\desktop\\agendaweb\\services\\contactoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|solutionrelative:services\\contactoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|c:\\users\\user\\onedrive\\desktop\\agendaweb\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|c:\\users\\user\\onedrive\\desktop\\agendaweb\\pages\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -49,10 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|c:\\users\\user\\onedrive\\desktop\\agendaweb\\pages\\login\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|solutionrelative:pages\\login\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|c:\\users\\user\\onedrive\\desktop\\agendaweb\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|solutionrelative:pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8D6A858D-C826-1C80-184F-1B0141728BA3}|MiAgendaWeb.csproj|c:\\users\\user\\onedrive\\desktop\\agendaweb\\pages\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -126,32 +126,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "EditarContacto.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\Pages\\EditarContactos\\EditarContacto.cshtml.cs",
-              "RelativeDocumentMoniker": "Pages\\EditarContactos\\EditarContacto.cshtml.cs",
-              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\Pages\\EditarContactos\\EditarContacto.cshtml.cs",
-              "RelativeToolTip": "Pages\\EditarContactos\\EditarContacto.cshtml.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAYwDMAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T21:17:19.083Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EditarContacto.cshtml",
-              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\Pages\\EditarContactos\\EditarContacto.cshtml",
-              "RelativeDocumentMoniker": "Pages\\EditarContactos\\EditarContacto.cshtml",
-              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\Pages\\EditarContactos\\EditarContacto.cshtml",
-              "RelativeToolTip": "Pages\\EditarContactos\\EditarContacto.cshtml",
-              "ViewState": "AgIAADwAAAAAAAAAAAAAAFwAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-07T21:17:15.983Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 13,
               "Title": "Privacy.cshtml",
               "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\Pages\\Privacy.cshtml",
@@ -164,64 +138,107 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\Pages\\Favoritos\\Index.cshtml",
               "RelativeDocumentMoniker": "Pages\\Favoritos\\Index.cshtml",
               "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\Pages\\Favoritos\\Index.cshtml",
               "RelativeToolTip": "Pages\\Favoritos\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEcAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAkwEIAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-04-30T02:51:21.619Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Index.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\Pages\\Favoritos\\Index.cshtml.cs",
               "RelativeDocumentMoniker": "Pages\\Favoritos\\Index.cshtml.cs",
               "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\Pages\\Favoritos\\Index.cshtml.cs",
               "RelativeToolTip": "Pages\\Favoritos\\Index.cshtml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAkwCIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-30T02:51:04.076Z"
+              "WhenOpened": "2026-04-30T02:51:04.076Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ContactoService.cs",
-              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\Services\\ContactoService.cs",
-              "RelativeDocumentMoniker": "Services\\ContactoService.cs",
-              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\Services\\ContactoService.cs",
-              "RelativeToolTip": "Services\\ContactoService.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAgwEQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-28T20:26:42.044Z"
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\Pages\\Index.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Index.cshtml",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\Pages\\Index.cshtml",
+              "RelativeToolTip": "Pages\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-11T03:02:23.557Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Index.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\Pages\\Home\\Index.cshtml.cs",
-              "RelativeDocumentMoniker": "Pages\\Home\\Index.cshtml.cs",
-              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\Pages\\Home\\Index.cshtml.cs",
-              "RelativeToolTip": "Pages\\Home\\Index.cshtml.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAswCcAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-27T03:54:32.832Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\Pages\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Pages\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\Pages\\Home\\Index.cshtml",
               "RelativeToolTip": "Pages\\Home\\Index.cshtml",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAkwEwAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE8AAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-27T03:53:28.605Z"
+              "WhenOpened": "2026-04-27T03:53:28.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\Pages\\Home\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Home\\Index.cshtml.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\Pages\\Home\\Index.cshtml.cs",
+              "RelativeToolTip": "Pages\\Home\\Index.cshtml.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAkwCcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-27T03:54:32.832Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EditarContacto.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\Pages\\EditarContactos\\EditarContacto.cshtml",
+              "RelativeDocumentMoniker": "Pages\\EditarContactos\\EditarContacto.cshtml",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\Pages\\EditarContactos\\EditarContacto.cshtml",
+              "RelativeToolTip": "Pages\\EditarContactos\\EditarContacto.cshtml",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAFwAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-07T21:17:15.983Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EditarContacto.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\Pages\\EditarContactos\\EditarContacto.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\EditarContactos\\EditarContacto.cshtml.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\Pages\\EditarContactos\\EditarContacto.cshtml.cs",
+              "RelativeToolTip": "Pages\\EditarContactos\\EditarContacto.cshtml.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwDYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T21:17:19.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ContactoService.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\Services\\ContactoService.cs",
+              "RelativeDocumentMoniker": "Services\\ContactoService.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\Services\\ContactoService.cs",
+              "RelativeToolTip": "Services\\ContactoService.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAgwDwAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-28T20:26:42.044Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -237,7 +254,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Index.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\Pages\\Login\\Index.cshtml.cs",
               "RelativeDocumentMoniker": "Pages\\Login\\Index.cshtml.cs",
@@ -249,7 +266,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\Pages\\Login\\Index.cshtml",
               "RelativeDocumentMoniker": "Pages\\Login\\Index.cshtml",
@@ -297,7 +314,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -305,8 +322,7 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-04-20T02:03:33.093Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-20T02:03:33.093Z"
             },
             {
               "$type": "Document",
@@ -334,7 +350,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "AgregarContacto.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\Pages\\AgregarContacto.cshtml.cs",
               "RelativeDocumentMoniker": "Pages\\AgregarContacto.cshtml.cs",
@@ -394,27 +410,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\Pages\\Index.cshtml",
-              "RelativeDocumentMoniker": "Pages\\Index.cshtml",
-              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\Pages\\Index.cshtml",
-              "RelativeToolTip": "Pages\\Index.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACoAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-11T03:02:23.557Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 5,
               "Title": "Index.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\Pages\\Index.cshtml.cs",
               "RelativeDocumentMoniker": "Pages\\Index.cshtml.cs",
               "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\Agendaweb\\Pages\\Index.cshtml.cs",
               "RelativeToolTip": "Pages\\Index.cshtml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAADIAAAAAAAAAAAAiwDsAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-11T03:02:03.877Z"
+              "WhenOpened": "2026-04-11T03:02:03.877Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
